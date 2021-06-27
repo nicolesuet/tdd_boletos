@@ -52,10 +52,11 @@ public class Fatura {
 	public void pagarFatura(ArrayList<Boleto> boletos) {
 		if(this.somaBoletos(boletos) == this.valor || this.somaBoletos(boletos) > this.valor) {
 			this.ehPaga = true;
-			boletos.forEach(b -> {
-				this.pagamentos.add(new Pagamento(b.getValorPago(), "BOLETO", b.getData()));
-			});	
-		}				
+		}
+		boletos.forEach(b -> {
+			this.pagamentos.add(new Pagamento(b.getValorPago(), "BOLETO", b.getData()));
+		});	
+
 	}
 
 }

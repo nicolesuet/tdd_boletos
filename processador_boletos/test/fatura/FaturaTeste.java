@@ -62,5 +62,22 @@ public class FaturaTeste {
 	    Assertions.assertEquals(boletos.size(), f.getPagamentos().size());
 	    	    
 	}
+	
+	@Test
+	public void testaNaoMarcarFaturaComoPagaComPagemntosComMenorMaiorECriarPagamentos() {
+	    ArrayList<Boleto> boletos = new ArrayList<Boleto>();
+	    Boleto b1 = new Boleto("1234567891", new Date(), 500.00);
+	    Boleto b2 = new Boleto("1234567892", new Date(), 400.00);
+	    boletos.add(b1);
+	    boletos.add(b2);
+	    
+	    Fatura f = new Fatura("Maria da Silva", new Date(), 2000.00);
+	    
+	    f.pagarFatura(boletos);
+	    
+	    Assertions.assertEquals(false, f.getEhPaga());
+	    Assertions.assertEquals(boletos.size(), f.getPagamentos().size());
+	    	    
+	}
 
 }
