@@ -5,7 +5,7 @@ import java.util.Date;
 public class Boleto {
 	
 	String codigo;
-	Double valorPago;
+	double valorPago;
 	Date data;
 
 	public Boleto(String codigo, Date data, double valorPago) {
@@ -14,7 +14,7 @@ public class Boleto {
 		this.data = data;
 	}
 
-	public Object getCodigo() {
+	public String getCodigo() {
 		return this.codigo;
 	}
 
